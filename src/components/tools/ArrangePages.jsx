@@ -90,14 +90,36 @@ const ArrangePages = () => {
   return (
     <section className="max-w-4xl mx-auto px-4 py-8" aria-labelledby="arrange-title">
       <div className="space-y-6">
-        <header className="text-center space-y-3">
+        <header className="space-y-4 text-center">
           <h1 id="arrange-title" className="text-2xl font-semibold text-gray-900">
             {strings.arrange.title}
           </h1>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             {strings.arrange.intro}
           </p>
-          <p className="text-xs text-gray-500">
+          <div className="grid gap-4 text-left text-xs text-gray-600 max-w-2xl mx-auto sm:grid-cols-2">
+            <div className="space-y-1">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Organize pages exactly how you need
+              </h2>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Reorder any page in your PDF with drag and drop.</li>
+                <li>Switch between grid and list views for large documents.</li>
+                <li>Perfect for splitting, restructuring and cleaning up PDFs.</li>
+              </ul>
+            </div>
+            <div className="space-y-1">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Fast, private page arranger
+              </h2>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>All page processing happens locally in your browser.</li>
+                <li>No uploads, no accounts, no watermarks added.</li>
+                <li>Download your rearranged PDF instantly when you&apos;re done.</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-[11px] text-gray-500 max-w-2xl mx-auto">
             {strings.arrange.privacy}
           </p>
         </header>
@@ -225,8 +247,8 @@ const ArrangePages = () => {
                           onClick={() => movePage(index, 'up')}
                           disabled={index === 0}
                           className={`p-1.5 rounded transition-colors ${index === 0
-                              ? 'text-gray-300 cursor-not-allowed'
-                              : 'text-gray-600 hover:bg-gray-100 cursor-pointer'
+                            ? 'text-gray-300 cursor-not-allowed'
+                            : 'text-gray-600 hover:bg-gray-100 cursor-pointer'
                             }`}
                           aria-label={`Move ${strings.arrange.pageOrder.pageLabel} ${pageNum} up`}
                           type="button"
@@ -237,8 +259,8 @@ const ArrangePages = () => {
                           onClick={() => movePage(index, 'down')}
                           disabled={index === pageOrder.length - 1}
                           className={`p-1.5 rounded transition-colors ${index === pageOrder.length - 1
-                              ? 'text-gray-300 cursor-not-allowed'
-                              : 'text-gray-600 hover:bg-gray-100 cursor-pointer'
+                            ? 'text-gray-300 cursor-not-allowed'
+                            : 'text-gray-600 hover:bg-gray-100 cursor-pointer'
                             }`}
                           aria-label={`Move ${strings.arrange.pageOrder.pageLabel} ${pageNum} down`}
                           type="button"
@@ -257,8 +279,8 @@ const ArrangePages = () => {
                 onClick={handleDownload}
                 disabled={isProcessing}
                 className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${isProcessing
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'bg-gray-900 text-white hover:bg-gray-800 cursor-pointer'
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-gray-900 text-white hover:bg-gray-800 cursor-pointer'
                   }`}
                 type="button"
                 aria-label={isProcessing ? 'Processing PDF' : 'Download rearranged PDF'}

@@ -26,6 +26,21 @@ const App = () => {
         <Sidebar />
         <main className="flex-1 overflow-auto transition-all duration-200">
           <ToolComponent />
+          <section
+            aria-label="About PDFTangler tools"
+            className="px-4 pb-8 bg-white text-gray-700 text-sm"
+          >
+            <div className="max-w-4xl mx-auto border-t border-gray-100 pt-6 mt-4">
+              <h2 className="text-sm font-semibold text-gray-900 mb-1">
+                Free in‑browser PDF merger and page reorder
+              </h2>
+              <p className="max-w-3xl">
+                PDFTangler lets you quickly merge multiple PDF files and rearrange pages directly in your browser.
+                There&apos;s no sign‑up, no watermarks, and no upload to external servers – your documents stay
+                on your device while you combine or reorder them and download the final PDF instantly.
+              </p>
+            </div>
+          </section>
         </main>
       </div>
       <Footer />

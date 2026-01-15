@@ -78,14 +78,36 @@ const MergeTool = () => {
   return (
     <section className="max-w-4xl mx-auto px-4 py-8" aria-labelledby="merge-title">
       <div className="space-y-6">
-        <header className="text-center space-y-3">
+        <header className="space-y-4 text-center">
           <h1 id="merge-title" className="text-2xl font-semibold text-gray-900">
             {strings.merge.title}
           </h1>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             {strings.merge.intro}
           </p>
-          <p className="text-xs text-gray-500">
+          <div className="grid gap-4 text-left text-xs text-gray-600 max-w-2xl mx-auto sm:grid-cols-2">
+            <div className="space-y-1">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Why use this PDF merge tool
+              </h2>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Merge multiple PDF files into a single clean document.</li>
+                <li>No sign‑up, no watermark, completely free to use.</li>
+                <li>Works in the browser on desktop and mobile.</li>
+              </ul>
+            </div>
+            <div className="space-y-1">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Private & secure in‑browser processing
+              </h2>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Files never leave your device – no server upload.</li>
+                <li>Ideal for contracts, invoices and confidential PDFs.</li>
+                <li>Download the merged PDF instantly after processing.</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-[11px] text-gray-500 max-w-2xl mx-auto">
             {strings.merge.privacy}
           </p>
         </header>
