@@ -9,9 +9,7 @@ import { useDocumentHead } from './utils/useDocumentHead'
 
 const App = () => {
   const { currentModule, showReorder } = usePdf()
-
   useDocumentHead(currentModule, showReorder ? 'reorder' : null)
-
   const toolComponentMap = {
     merge: MergeTool,
     arrange: ArrangePages
