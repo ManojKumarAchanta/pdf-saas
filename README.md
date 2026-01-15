@@ -1,6 +1,6 @@
 # PDFTangler 🧩
 
-**PDFTangler** is a fast, privacy-first PDF utility built by **Manoj Kumar Achanta**.  
+**PDFTangler** is a fast, privacy-first PDF utility tool.  
 It allows users to **merge PDFs in a custom order** and **rearrange pages within a PDF** — all **directly in the browser**.
 
 No servers.  
