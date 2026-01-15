@@ -1,6 +1,6 @@
 export const strings = {
   app: {
-    name: 'Fuse PDF',
+    name: 'PDFTangler',
     tagline: 'PDF tools in your browser'
   },
   common: {

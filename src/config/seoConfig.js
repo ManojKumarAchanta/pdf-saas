@@ -1,6 +1,6 @@
 export const seoConfig = {
   default: {
-    title: 'Fuse PDF - Free PDF Tools for Merging and Rearranging',
+    title: 'PDFTangler - Free PDF Tools for Merging and Rearranging',
     description: 'Free online PDF tools. Merge multiple PDF files or rearrange pages. All processing happens in your browser - your files never leave your device.',
     keywords: 'PDF merge, PDF tools, merge PDF, combine PDF, PDF pages, rearrange PDF'
   },
