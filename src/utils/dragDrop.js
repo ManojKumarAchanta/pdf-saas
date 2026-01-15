@@ -42,7 +42,7 @@ export const handleTouchStart = (e, index, setDraggedIndex) => {
   touchElement.style.transition = 'none'
 }
 
-export const handleTouchMove = (e, setDraggedIndex) => {
+export const handleTouchMove = (e) => {
   if (touchStartIndex === null || !touchElement) return
 
   const touch = e.touches[0]

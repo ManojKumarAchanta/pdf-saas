@@ -179,7 +179,7 @@ const ArrangePages = () => {
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, index, draggedIndex, handleReorder)}
                       onTouchStart={(e) => handleTouchStart(e, index, setDraggedIndex)}
-                      onTouchMove={(e) => handleTouchMove(e, setDraggedIndex)}
+                      onTouchMove={handleTouchMove}
                       onTouchEnd={(e) => handleTouchEnd(e, setDraggedIndex, handleReorder)}
                       className={`flex flex-col items-center p-3 border border-gray-200 rounded-md hover:border-gray-300 transition-all cursor-move touch-none ${draggedIndex === index ? 'opacity-50' : ''
                         }`}
@@ -206,7 +206,7 @@ const ArrangePages = () => {
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, index, draggedIndex, handleReorder)}
                       onTouchStart={(e) => handleTouchStart(e, index, setDraggedIndex)}
-                      onTouchMove={(e) => handleTouchMove(e, setDraggedIndex)}
+                      onTouchMove={handleTouchMove}
                       onTouchEnd={(e) => handleTouchEnd(e, setDraggedIndex, handleReorder)}
                       className={`flex items-center gap-3 p-3 border border-gray-200 rounded-md hover:border-gray-300 transition-all cursor-move group touch-none ${draggedIndex === index ? 'opacity-50' : ''
                         }`}
