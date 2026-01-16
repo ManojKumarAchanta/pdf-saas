@@ -33,8 +33,7 @@ Everything runs **client-side**, so your files never leave your device.
 
 ## 🚀 Live Demo
 
-👉 https://tools.fusepdf.me  
-*(or update this link if hosted elsewhere)*
+👉 https://tools.fusepdf.me
 
 ---
 
