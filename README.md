@@ -24,7 +24,6 @@ Live demo: https://pdftangler.pages.dev
 All PDF processing happens **client-side**, so your files **never leave your device**.
 
 ---
-
 ##  Features
 
 - 📄 Merge multiple PDFs in any custom order
