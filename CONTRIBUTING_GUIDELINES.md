@@ -49,6 +49,17 @@ Simple and clear beats long essays.
 
 Want to fix something or add a feature? Let’s go 🚀
 
+## 🍴 Fork the Repository (Required)
+
+If you are **not a direct collaborator**, you must **fork the repository** before contributing.
+
+### How to fork
+1. Click the **Fork** button (top-right of this repo)
+2. This creates a copy under **your GitHub account**
+3. Clone **your fork**, not the main repo:
+
+git clone https://github.com/<your-username>/PdfTangler.git
+cd PdfTangler
 ### Local setup
 
 git clone https://github.com/ManojKumarAchanta/PdfTangler.git
@@ -129,3 +140,4 @@ If PdfTangler helps you:
 
 Thanks for being part of the project ❤️
 Happy hacking!
+
