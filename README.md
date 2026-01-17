@@ -116,6 +116,8 @@ Beginner-friendly issues are welcome
 
 ⭐ Support the Project
 If you find PDFTangler useful:
+PdfTangler is an open-source project built and maintained in my free time.
+If it helps you or you enjoy using it, support is always appreciated — but never required.
 
 ⭐ Star the repository
 
