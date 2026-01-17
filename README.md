@@ -1,33 +1,48 @@
-# PDFTangler 🧩
+# PdfTangler
 
-**PDFTangler** is a fast, privacy-first PDF utility tool.  
-It allows users to **merge PDFs in a custom order** and **rearrange pages within a PDF** — all **directly in the browser**.
+**PdfTangler** is a simple, fast, privacy-first **React-based PDF utility web app**.
 
-No servers.  
-No uploads.  
-No login.  
-No hidden limits.
+It lets users **merge PDFs** and **reorder PDF pages** — entirely **in the browser**.
 
-Everything runs **client-side**, so your files never leave your device.
+❗ PdfTangler is **NOT** a Python tool, **NOT** a Streamlit app, and **NOT** a PDF data-extraction library.  
+It is a **frontend-only React application** with no backend.
+
+---
+
+## 🔒 Privacy First by Design
+
+- No servers
+- No file uploads
+- No login
+- No tracking
+- No hidden limits
+
+All PDF processing happens **client-side**, so your files **never leave your device**.
 
 ---
 
 ## ✨ Features
 
-- 📄 Merge multiple PDFs in any order
-- 🔀 Reorder pages within a PDF
-- 🔐 100% client-side processing (secure & private)
+- 📄 Merge multiple PDFs in any custom order
+- 🔀 Reorder pages inside a PDF
+- 🔐 100% client-side processing
 - ⚡ Fast and lightweight
 - 🧘 No login, no tracking, no friction
-- 💻 Works entirely in the browser
+- 💻 Works fully in the browser
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **React.js**
+- **JavaScript**
 - **pdf-lib**
 - **Tailwind CSS**
+- **Cloudflare Pages** (hosting)
+
+No backend.  
+No Python.  
+No server-side processing.
 
 ---
 
@@ -39,94 +54,59 @@ Everything runs **client-side**, so your files never leave your device.
 
 ## 📦 Getting Started (Local Setup)
 
-No environment variables required.  
-No backend services.  
-Just clone and run.
+No environment variables.  
+No backend services.
 
 ### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/ManojKumarAchanta/PDFTangler.git
-cd PDFTangler
-2️⃣ Install dependencies
-bash
-Copy code
+git clone https://github.com/ManojKumarAchanta/PdfTangler.git
+cd PdfTangler
+
+###  2️⃣ Install dependencies
 npm install
-3️⃣ Start the development server
-bash
-Copy code
+
+### 3️⃣ Start the dev server
 npm run dev
-The application will be available at:
 
-arduino
-Copy code
+
+## The app runs at:
+
 http://localhost:5173
-🧠 How It Works
-PDFTangler uses the pdf-lib library to read, manipulate, and generate PDFs directly in the browser.
-All operations (merging, reordering) happen locally, ensuring maximum privacy and zero server dependency.
 
-🤝 Contributing
-Contributions are highly encouraged and always welcome 🚀
+## 🧠 How It Works
 
-Whether you are:
+PdfTangler uses the pdf-lib JavaScript library to read, modify, and generate PDFs directly in the browser.
 
-Making your first open-source contribution
+All operations (merging, reordering) run locally in the user’s browser — ensuring privacy and zero server dependency.
+
+## 🤝 Contributing
+
+Contributions are welcome — including beginner-friendly ones.
+
+You can help by:
 
 Improving UI/UX
 
-Refactoring or optimizing code
+Refactoring code
 
-Fixing bugs or adding features
+Fixing bugs
 
-You are welcome here.
+Adding features
 
-🛠️ How to Contribute
-Fork the repository
-
-Create a new branch
-
-bash
-Copy code
+## How to contribute
 git checkout -b feature/your-feature-name
-Make your changes
-
-Commit with a clear, descriptive message
-
-bash
-Copy code
-git commit -m "Improve drag-and-drop UX for PDF reordering"
-Push to your fork
-
-bash
-Copy code
+git commit -m "Describe your change clearly"
 git push origin feature/your-feature-name
-Open a Pull Request 🎉
 
-🐛 Issues & Improvements
-Check the Issues tab for open tasks
 
-Feel free to open new issues for:
+## Open a Pull Request 🎉
 
-Bugs
+⭐ Support
 
-Feature requests
-
-UI/UX improvements
-
-Beginner-friendly issues are welcome
-
-⭐ Support the Project
-If you find PDFTangler useful:
-PdfTangler is an open-source project built and maintained in my free time.
-If it helps you or you enjoy using it, support is always appreciated — but never required.
-
+If PdfTangler helps you:
 ⭐ Star the repository
 
 🧑‍💻 Contribute improvements
 
 📢 Share it with others
 
-📄 License
-This project is open source and available under the MIT License.
-
-Built with care for privacy, simplicity, and real-world usability.
-Let’s build useful tools — no BS. 🔥
+Built and maintained by Manoj Kumar Achanta.
