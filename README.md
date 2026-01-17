@@ -12,7 +12,7 @@ It runs fully in the browser and is NOT a Python or Streamlit tool.
 Live demo: https://pdftangler.pages.dev
 ---
 
-## 🔒 Privacy First by Design
+##  Privacy First by Design
 
 - No servers
 - No file uploads
@@ -24,7 +24,7 @@ All PDF processing happens **client-side**, so your files **never leave your dev
 
 ---
 
-## ✨ Features
+##  Features
 
 - 📄 Merge multiple PDFs in any custom order
 - 🔀 Reorder pages inside a PDF
@@ -49,7 +49,7 @@ No server-side processing.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 👉 https://tools.fusepdf.me
 
