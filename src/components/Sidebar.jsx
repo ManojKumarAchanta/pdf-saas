@@ -31,7 +31,7 @@ const Sidebar = () => {
       <nav
         className={`fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-50 transition-all duration-200 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
           } md:translate-x-0 md:static md:z-auto md:h-auto`}
-        style={{ width: `${width}px` }}
+        style={{ width: `${width}px`, willChange: "width, transform" }}
         aria-label="Main navigation"
       >
         <div className="h-full flex flex-col md:min-h-[calc(100vh-56px)]">
@@ -50,18 +50,29 @@ const Sidebar = () => {
             {appConfig.tools.map((tool) => (
               <li key={tool.id} role="none">
                 <button
-                  onClick={() => handleItemClick(tool.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2 text-left rounded-md transition-colors text-sm cursor-pointer ${currentModule === tool.id
-                    ? 'bg-gray-100 text-gray-900 font-medium'
-                    : 'text-gray-700 hover:bg-gray-50'
-                    }`}
-                  title={tool.name}
-                  aria-current={currentModule === tool.id ? 'page' : undefined}
-                  type="button"
-                >
-                  <span className="text-base flex-shrink-0" aria-hidden="true">{toolIcons[tool.id]}</span>
-                  {!sidebarCollapsed && <span>{tool.name}</span>}
-                </button>
+                     onClick={() => handleItemClick(tool.id)}
+                         className={`w-full flex flex-nowrap items-center gap-3 px-3 py-2 text-left rounded-md transition-colors text-sm cursor-pointer ${
+                           currentModule === tool.id
+                               ? 'bg-gray-100 text-gray-900 font-medium'
+                              : 'text-gray-700 hover:bg-gray-50'
+                            }`}
+                            title={tool.name}
+                          aria-current={currentModule === tool.id ? 'page' : undefined}
+                          type="button"
+                        >
+                       <span className="text-base flex-shrink-0" aria-hidden="true">
+                      {toolIcons[tool.id]}
+                      </span>
+
+                    <span
+                        className={`whitespace-nowrap transition-opacity duration-200 ${
+                       sidebarCollapsed ? "opacity-0" : "opacity-100"
+                      }`}
+                      >
+                     {tool.name}
+                      </span>
+                    </button>
+
               </li>
             ))}
           </ul>
