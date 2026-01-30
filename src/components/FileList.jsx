@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import FileItem from './FileItem'
-import ViewToggle from './shared/ViewToggle'
-import { strings } from '../config/appStrings'
+import React, { useState } from "react";
+import FileItem from "./FileItem";
+import ViewToggle from "./shared/ViewToggle";
+import { strings } from "../config/appStrings";
 
 const FileList = ({ files, onRemove, handleContinueToReorder, isMerging }) => {
-  const [viewMode, setViewMode] = useState('grid')
+  const [viewMode, setViewMode] = useState("grid");
 
   if (files.length === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -34,20 +34,28 @@ const FileList = ({ files, onRemove, handleContinueToReorder, isMerging }) => {
           <ViewToggle viewMode={viewMode} onViewChange={setViewMode} />
         </div>
       </div>
-      <div className={viewMode === 'grid' ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3' : 'space-y-2'}>
+      <ul
+        className={
+          viewMode === "grid"
+            ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+            : "space-y-2"
+        }
+        role="list"
+        aria-label="Selected PDF files"
+      >
         {files.map((file, index) => (
-          <FileItem
-            key={`${file.name}-${index}`}
-            file={file}
-            index={index}
-            onRemove={onRemove}
-            viewMode={viewMode}
-          />
+          <li key={`${file.name}-${index}`}>
+            <FileItem
+              file={file}
+              index={index}
+              onRemove={onRemove}
+              viewMode={viewMode}
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default FileList
-
+export default FileList;

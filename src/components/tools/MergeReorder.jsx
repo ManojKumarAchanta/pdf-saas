@@ -1,20 +1,28 @@
-import React, { useState } from 'react'
-import { usePdf } from '../../context/pdfContext'
-import { handleDragStart, handleDragEnd, handleDragOver, handleDrop, handleTouchStart, handleTouchMove, handleTouchEnd } from '../../utils/dragDrop'
-import { strings } from '../../config/appStrings'
-import { icons } from '../../config/iconConfig'
-import ViewToggle from '../shared/ViewToggle'
-import FileItem from '../FileItem'
+import React, { useState } from "react";
+import { usePdf } from "../../context/pdfContext";
+import {
+  handleDragStart,
+  handleDragEnd,
+  handleDragOver,
+  handleDrop,
+  handleTouchStart,
+  handleTouchMove,
+  handleTouchEnd,
+} from "../../utils/dragDrop";
+import { strings } from "../../config/appStrings";
+import { icons } from "../../config/iconConfig";
+import ViewToggle from "../shared/ViewToggle";
+import FileItem from "../FileItem";
 
 const MergeReorder = ({ onConfirm, onCancel }) => {
-  const { files, removeFile, reorderFile } = usePdf()
-  const [draggedIndex, setDraggedIndex] = useState(null)
-  const [viewMode, setViewMode] = useState('grid')
+  const { files, removeFile, reorderFile } = usePdf();
+  const [draggedIndex, setDraggedIndex] = useState(null);
+  const [viewMode, setViewMode] = useState("grid");
 
   const handleReorder = (fromIndex, toIndex) => {
-    reorderFile(fromIndex, toIndex)
-    setDraggedIndex(null)
-  }
+    reorderFile(fromIndex, toIndex);
+    setDraggedIndex(null);
+  };
 
   return (
     <div className="space-y-6">
@@ -51,56 +59,90 @@ const MergeReorder = ({ onConfirm, onCancel }) => {
           </div>
         </div>
 
-        {viewMode === 'grid' ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" role="list">
+        {viewMode === "grid" ? (
+          <ul
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+            role="list"
+            aria-label="PDF files to merge"
+          >
             {files.map((file, index) => (
-              <div
+              <li
                 key={`${file.name}-${index}`}
                 draggable
                 data-drag-index={index}
                 onDragStart={(e) => handleDragStart(e, index, setDraggedIndex)}
                 onDragEnd={(e) => handleDragEnd(e, setDraggedIndex)}
                 onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, index, draggedIndex, handleReorder)}
-                onTouchStart={(e) => handleTouchStart(e, index, setDraggedIndex)}
+                onDrop={(e) =>
+                  handleDrop(e, index, draggedIndex, handleReorder)
+                }
+                onTouchStart={(e) =>
+                  handleTouchStart(e, index, setDraggedIndex)
+                }
                 onTouchMove={handleTouchMove}
-                onTouchEnd={(e) => handleTouchEnd(e, setDraggedIndex, handleReorder)}
-                className={`relative touch-none ${draggedIndex === index ? 'opacity-50' : ''}`}
+                onTouchEnd={(e) =>
+                  handleTouchEnd(e, setDraggedIndex, handleReorder)
+                }
+                className={`relative touch-none ${draggedIndex === index ? "opacity-50" : ""}`}
                 aria-label={`File ${index + 1} of ${files.length}: ${file.name}. Drag to reorder.`}
-                role="listitem"
               >
-                <div className="flex items-center justify-center mb-2 text-xs font-medium text-gray-500" aria-hidden="true">
+                <div
+                  className="flex items-center justify-center mb-2 text-xs font-medium text-gray-500"
+                  aria-hidden="true"
+                >
                   #{index + 1}
                 </div>
-                <FileItem file={file} index={index} onRemove={removeFile} viewMode="grid" />
-              </div>
+                <FileItem
+                  file={file}
+                  index={index}
+                  onRemove={removeFile}
+                  viewMode="grid"
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         ) : (
-          <div className="space-y-2" role="list">
+          <ul className="space-y-2" role="list" aria-label="PDF files to merge">
             {files.map((file, index) => (
-              <div
+              <li
                 key={`${file.name}-${index}`}
                 draggable
                 data-drag-index={index}
                 onDragStart={(e) => handleDragStart(e, index, setDraggedIndex)}
                 onDragEnd={(e) => handleDragEnd(e, setDraggedIndex)}
                 onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, index, draggedIndex, handleReorder)}
-                onTouchStart={(e) => handleTouchStart(e, index, setDraggedIndex)}
+                onDrop={(e) =>
+                  handleDrop(e, index, draggedIndex, handleReorder)
+                }
+                onTouchStart={(e) =>
+                  handleTouchStart(e, index, setDraggedIndex)
+                }
                 onTouchMove={handleTouchMove}
-                onTouchEnd={(e) => handleTouchEnd(e, setDraggedIndex, handleReorder)}
-                className={`flex items-center gap-3 p-3 border border-gray-200 rounded-md hover:border-gray-300 transition-all cursor-move group touch-none ${draggedIndex === index ? 'opacity-50' : ''
-                  }`}
+                onTouchEnd={(e) =>
+                  handleTouchEnd(e, setDraggedIndex, handleReorder)
+                }
+                className={`flex items-center gap-3 p-3 border border-gray-200 rounded-md hover:border-gray-300 transition-all cursor-move group touch-none ${
+                  draggedIndex === index ? "opacity-50" : ""
+                }`}
                 aria-label={`File ${index + 1} of ${files.length}: ${file.name}. Drag to reorder.`}
-                role="listitem"
               >
-                <div className="flex-shrink-0 w-6 text-xs font-medium text-gray-500" aria-hidden="true">#{index + 1}</div>
-                <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-400" aria-hidden="true">
+                <div
+                  className="flex-shrink-0 w-6 text-xs font-medium text-gray-500"
+                  aria-hidden="true"
+                >
+                  #{index + 1}
+                </div>
+                <div
+                  className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-gray-400"
+                  aria-hidden="true"
+                >
                   <div className="w-4 h-4">{icons.dragHandle}</div>
                 </div>
                 <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gray-100 rounded flex items-center justify-center" aria-hidden="true">
+                  <div
+                    className="flex-shrink-0 w-8 h-8 bg-gray-100 rounded flex items-center justify-center"
+                    aria-hidden="true"
+                  >
                     <div className="w-4 h-4 text-gray-600">{icons.pdf}</div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -115,13 +157,15 @@ const MergeReorder = ({ onConfirm, onCancel }) => {
                       aria-label={`Remove ${file.name}`}
                       type="button"
                     >
-                      <div className="w-4 h-4" aria-hidden="true">{icons.close}</div>
+                      <div className="w-4 h-4" aria-hidden="true">
+                        {icons.close}
+                      </div>
                     </button>
                   )}
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
 
@@ -144,8 +188,7 @@ const MergeReorder = ({ onConfirm, onCancel }) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MergeReorder
-
+export default MergeReorder;
