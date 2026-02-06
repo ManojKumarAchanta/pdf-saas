@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pdftangler.pages.dev/sitemap.xml
+Sitemap: https://saas.pdftangler.me/sitemap.xml
